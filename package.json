@@ -1,0 +1,97 @@
+{
+  "name": "vscode-multi-agent-coder",
+  "displayName": "Multi-Agent Coder",
+  "description": "多Agent协同编程助手",
+  "version": "0.1.0",
+  "publisher": "WenJun",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:extension": "tsup --watch",
+    "build": "pnpm run build:extension && pnpm run build:webview",
+    "build:extension": "tsup",
+    "build:webview": "vite build",
+    "watch": "concurrently \"pnpm run dev:extension\" \"vite build --watch\"",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/marked": "^6.0.0",
+    "@types/node": "^24.8.1",
+    "@types/vscode": "^1.105.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vscode/vsce": "^3.6.2",
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.25.11",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10",
+    "vue-tsc": "^3.1.1"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "marked": "^16.4.1",
+    "vue": "^3.5.22"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "multiAgentCoder.start",
+        "title": "Multi-Agent: 开始编程",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "multiAgentCoder.showDashboard",
+        "title": "Multi-Agent: 打开控制面板",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "multiAgentCoder.config",
+        "title": "Multi-Agent: 配置",
+        "icon": "$(settings-gear)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "multi-agent-coder",
+          "title": "Multi-Agent",
+          "icon": "resources/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "multi-agent-coder": [
+        {
+          "type": "webview",
+          "id": "multiAgentCoder.sidebarView",
+          "name": "控制面板"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Multi-Agent Coder",
+      "properties": {
+        "multiAgentCoder.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Claude API Key"
+        },
+        "multiAgentCoder.autoStart": {
+          "type": "boolean",
+          "default": false,
+          "description": "启动时自动打开控制面板"
+        }
+      }
+    }
+  }
+}
