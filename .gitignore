@@ -1,9 +1,0 @@
-node_modules/
-dist/
-out/
-*.vsix
-*.log
-.DS_Store
-.vscode-test/
-*.db
-*.db-journal
