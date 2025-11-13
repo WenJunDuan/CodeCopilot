@@ -1,0 +1,15 @@
+{
+  "feedback_rules": {
+    "auto_mode_timeout": 300,
+    "confirmation_required": [
+      "architecture_decision",
+      "major_refactoring",
+      "security_change"
+    ],
+    "auto_proceed": [
+      "code_implementation",
+      "documentation_update",
+      "unit_test"
+    ]
+  }
+}

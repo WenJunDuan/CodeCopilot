@@ -1,0 +1,47 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/context-enhancer.py",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pace-router.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/quality-gate.py",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/task-tracker.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  },
+  "mcp": {
+    "tool_bindings_file": ".claude/mcp/tool-bindings.json",
+    "task_manager_config": ".claude/mcp/task-manager-config.json",
+    "feedback_rules": ".claude/mcp/feedback-rules.json"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "tool_bindings": {
+    "project-manager": {
+      "primary": ["shrimp-task-manager"],
+      "secondary": ["mcp-feedback-enhanced", "mcp-server-time", "mcp-git-ops"],
+      "description": "项目总控，负责任务管理、进度监控、风险管理和团队协调"
+    },
+    "product-manager": {
+      "primary": ["context7"],
+      "secondary": ["shrimp-task-manager", "mcp-deepwiki", "memory"],
+      "description": "需求分析专家，主导context7进行上下文分析和需求理解"
+    },
+    "architect": {
+      "primary": ["sequential-thinking"],
+      "secondary": ["shrimp-task-manager", "mcp-deepwiki", "memory"],
+      "description": "技术架构师，主导sequential-thinking进行深度技术分析和方案设计"
+    },
+    "lead-developer": {
+      "primary": ["playwright"],
+      "secondary": ["shrimp-task-manager", "desktop-commander", "mcp-server-time", "mcp-git-ops", "mcp-pgsql-tools"],
+      "description": "首席开发，负责代码实现、测试执行和技术难题解决"
+    },
+    "documentation-writer": {
+      "primary": ["memory"],
+      "secondary": ["shrimp-task-manager", "mcp-server-time", "mcp-git-ops"],
+      "description": "文档专家，主导memory进行知识沉淀和经验管理"
+    },
+    "quality-engineer": {
+      "primary": ["playwright"],
+      "secondary": ["shrimp-task-manager", "mcp-feedback-enhanced", "mcp-pgsql-tools"],
+      "description": "质量工程师，负责质量保证、测试策略和风险控制"
+    }
+  },
+  "mcp_servers_available": {
+    "context7": {
+      "purpose": "上下文分析和项目理解",
+      "primary_user": "product-manager",
+      "capabilities": ["需求分析", "上下文理解", "关联分析"]
+    },
+    "sequential-thinking": {
+      "purpose": "深度思考和技术分析",
+      "primary_user": "architect",
+      "capabilities": ["深度推理", "技术评估", "方案设计"]
+    },
+    "mcp-feedback-enhanced": {
+      "purpose": "用户交互和反馈管理",
+      "primary_user": "project-manager",
+      "capabilities": ["用户确认", "进度通知", "自动化控制"]
+    },
+    "playwright": {
+      "purpose": "自动化测试",
+      "primary_user": "lead-developer",
+      "capabilities": ["E2E测试", "浏览器自动化", "测试录制"]
+    },
+    "mcp-server-time": {
+      "purpose": "时间戳服务",
+      "shared": true,
+      "capabilities": ["时间戳生成", "时区转换", "时间计算"]
+    },
+    "shrimp-task-manager": {
+      "purpose": "任务管理核心",
+      "shared": true,
+      "capabilities": ["任务规划", "依赖管理", "进度追踪", "复杂度评估"]
+    },
+    "mcp-deepwiki": {
+      "purpose": "深度知识库查询",
+      "shared": true,
+      "capabilities": ["技术文档查询", "深度内容抓取", "知识整合"]
+    },
+    "memory": {
+      "purpose": "长期记忆管理",
+      "primary_user": "documentation-writer",
+      "capabilities": ["经验回忆", "知识提交", "历史查询"]
+    },
+    "desktop-commander": {
+      "purpose": "系统级操作",
+      "primary_user": "lead-developer",
+      "capabilities": ["系统命令", "文件操作", "进程管理"]
+    },
+    "mcp-git-ops": {
+      "purpose": "Git版本控制",
+      "shared": true,
+      "capabilities": ["代码提交", "分支管理", "历史查询"]
+    },
+    "mcp-pgsql-tools": {
+      "purpose": "PostgreSQL数据库操作",
+      "primary_user": "lead-developer",
+      "capabilities": ["数据库查询", "架构管理", "数据操作"]
+    }
+  }
+}

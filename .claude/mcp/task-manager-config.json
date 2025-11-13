@@ -1,0 +1,9 @@
+{
+  "task_manager_config": {
+    "auto_summary_interval": 5,
+    "max_task_depth": 3,
+    "dependency_check": true,
+    "complexity_estimation": true,
+    "milestone_tracking": true
+  }
+}
